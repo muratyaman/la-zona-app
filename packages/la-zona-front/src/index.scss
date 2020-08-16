@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+div, span {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 99vw;
+  height: 28px;
+  background-color: ivory;
+  opacity: 0.7;
+  ul {
+    list-style: none;
+    width: 99vw;
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+      vertical-align: top;
+      margin: 2px;
+      height: 22px;
+      display: inline-block;
+      a {
+        color: blue;
+      }
+      a:active {
+        color: blue;
+      }
+      a:hover {
+        font-weight: bold;
+      }
+      a:visited {
+        color: blue;
+      }
+    }
+    li.app-name {
+
+    }
+    li.geotracker {
+      i {
+        /*font-family: Arial;*/
+        font-style: normal;
+        font-size: 0.75rem;
+      }
+    }
+
+    li.inthezone {
+      i {
+        font-style: normal;
+        font-weight: bold;
+        color: red;
+        font-size: 0.85rem;
+      }
+    }
+
+  }
+}
+
+main {
+  z-index: 1;
+  position: relative;
+  margin: 0;
+  padding: 0;
+
+  .page {
+    margin: 0;
+    padding: 0;
+  }
+
+  .page-home {
+
+  }
+
+  .page-zone {
+
+    svg {
+
+      circle {
+        stroke-width: 0.17em;
+      }
+
+      circle.small {
+        fill: red;
+        stroke: white;
+      }
+
+      circle.big {
+        fill: blue;
+        stroke: #0F1C3F;
+      }
+    }
+
+  }
+
+}
