@@ -2,6 +2,8 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { ZoneMap } from '../components/ZoneMap';
 import { ContentAbout } from './ContentAbout';
+import { ContentPrivacy } from './ContentPrivacy';
+import { ContentTerms } from './ContentTerms';
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -32,9 +34,9 @@ class HomePage extends React.Component {
           <ZoneMap {...mapProps} />
         </div>
         <Switch>
-          <Route path='/about'>
-            <ContentAbout />
-          </Route>
+          <Route path='/about'><ContentAbout /></Route>
+          <Route path='/privacy'><ContentPrivacy /></Route>
+          <Route path='/terms'><ContentTerms /></Route>
         </Switch>
       </div>
     );
