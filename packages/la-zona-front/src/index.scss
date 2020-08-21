@@ -20,7 +20,7 @@ div, span {
 
 nav {
   z-index: 2;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   margin: 0;
@@ -28,7 +28,7 @@ nav {
   width: 99vw;
   height: 28px;
   background-color: ivory;
-  opacity: 0.7;
+  opacity: 0.8;
   ul {
     list-style: none;
     width: 99vw;
@@ -86,31 +86,143 @@ main {
   .page {
     margin: 0;
     padding: 0;
-  }
 
-  .page-home {
+    div.map-container {
+      z-index: 2;
+      svg {
 
-  }
+        circle {
+          stroke-width: 0.17em;
+        }
 
-  .page-zone {
+        circle.small {
+          fill: red;
+          stroke: white;
+        }
 
-    svg {
+        circle.big {
+          fill: blue;
+          stroke: #0F1C3F;
+        }
+      }
+    }
 
-      circle {
-        stroke-width: 0.17em;
+    div.content-container {
+      z-index: 3;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0;
+      padding: 0;
+      background-color: ivory;
+      opacity: 0.9;
+      height: 100vh;
+
+      div.content-title {
+        margin-top: 28px;
       }
 
-      circle.small {
-        fill: red;
-        stroke: white;
+      div.content-children {
+        padding: 3px;
+
+        div.img-container {
+          width: 100%;
+          margin: 0;
+
+          img {
+            border: 2px solid gray;
+            margin: 0;
+            padding: 0;
+            width: 360px;
+          }
+        }
       }
 
-      circle.big {
-        fill: blue;
-        stroke: #0F1C3F;
-      }
     }
 
   }
 
+}
+
+
+.hamburger {
+  width: 19px;
+  margin: 3px;
+  span {
+    width: 16px;
+    height: 3px;
+    margin-bottom: 2px;
+    background-color: black;
+    font-size: 4px;
+    display: inline-block;
+    float: left;
+    border-radius: 2px;
+  }
+}
+
+.sidebar {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 90%;
+  background-color: ivory;
+  opacity: 0.9;
+  overflow-x: hidden;
+  padding-top: 0;
+  box-shadow: 4px 4px 2px darkgray;
+  animation: fade-in 1s;
+
+  a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #111;
+    display: block;
+    transition: 0.3s;
+  }
+
+  a:hover {
+    color: #f1f1f1;
+  }
+
+  .sidebarCloseButton {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 30px;
+  }
+
+}
+
+.sidebar-hidden {
+  display: none;
+  animation: fade-out 1s;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar   { padding-top: 15px; }
+  .sidebar a { font-size: 18px; }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
